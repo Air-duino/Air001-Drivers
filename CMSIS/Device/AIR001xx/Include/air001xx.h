@@ -79,7 +79,7 @@ extern "C" {
   * @{
   */
 
-#if defined(ARDUINO_AIR001_DEV)
+#if defined(AIR001_DEV)
 #include "air001_dev.h"
 #else
 #error "Please select first the target device used in your application (in Air001.h file)"
