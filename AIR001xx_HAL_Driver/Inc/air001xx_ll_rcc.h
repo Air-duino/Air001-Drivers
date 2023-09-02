@@ -1881,7 +1881,7 @@ ErrorStatus LL_RCC_DeInit(void);
 void        LL_RCC_GetSystemClocksFreq(LL_RCC_ClocksTypeDef *RCC_Clocks);
 uint32_t    LL_RCC_GetMCOClockFreq(uint32_t MCOx);
 uint32_t    LL_RCC_GetLSCClockFreq(void);
-#if defined(PVD)
+#if defined(RCC_CCIPR_PVDSEL)
 uint32_t    LL_RCC_GetPVDClockFreq(void);
 #endif
 #if defined(COMP1)
@@ -1890,7 +1890,7 @@ uint32_t    LL_RCC_GetCOMPClockFreq(uint32_t COMPx);
 #if defined(LPTIM1)
 uint32_t    LL_RCC_GetLPTIMClockFreq(uint32_t LPTIMx);
 #endif 
-#if defined(TRC)
+#if defined(RCC_BDCR_RTCSEL)
 uint32_t    LL_RCC_GetRTCClockFreq(void);
 #endif
 /**
