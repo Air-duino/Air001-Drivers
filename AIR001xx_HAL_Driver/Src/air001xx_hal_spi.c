@@ -762,9 +762,6 @@ HAL_StatusTypeDef HAL_SPI_Transmit(SPI_HandleTypeDef *hspi, uint8_t *pData, uint
     goto error;
   }
 
-  /* Disable SPI peripheral */
-  __HAL_SPI_DISABLE(hspi);
-
   /* Set the transaction information */
   hspi->State       = HAL_SPI_STATE_BUSY_TX;
   hspi->ErrorCode   = HAL_SPI_ERROR_NONE;
@@ -782,6 +779,8 @@ HAL_StatusTypeDef HAL_SPI_Transmit(SPI_HandleTypeDef *hspi, uint8_t *pData, uint
   /* Configure communication direction : 1Line */
   if (hspi->Init.Direction == SPI_DIRECTION_1LINE)
   {
+    /* Disable SPI peripheral */
+    __HAL_SPI_DISABLE(hspi);
     SPI_1LINE_TX(hspi);
   }
 
