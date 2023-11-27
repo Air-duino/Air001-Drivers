@@ -298,7 +298,7 @@ HAL_StatusTypeDef HAL_RCC_DeInit(void)
 HAL_StatusTypeDef HAL_RCC_OscConfig(RCC_OscInitTypeDef  *RCC_OscInitStruct)
 {
   uint32_t tickstart;
-  uint32_t temp_sysclksrc;
+  uint32_t temp_sysclksrc = RCC_CFGR_SWS_HSI;
 #if defined(RCC_PLL_SUPPORT)
   uint32_t temp_pllckcfg;
 #endif
